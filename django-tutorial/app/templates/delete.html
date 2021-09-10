@@ -1,8 +1,7 @@
-{% extends 'body.html' %}
-{% load widget_tweaks %}
+{% extends 'layout.html' %}
 {% block content %}
     <form method="post" action=".">
-        <div class="card card-default">
+        <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-trash"></i>
@@ -55,7 +54,6 @@
                     location.href = '{{ list_url }}';
                     return false;
                 }
-                message_error(data.error);
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert(textStatus + ': ' + errorThrown);
             }).always(function (data) {
