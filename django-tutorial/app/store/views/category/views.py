@@ -136,9 +136,6 @@ class CategoryFormView(FormView):
     template_name = 'category/create.html'
     success_url = reverse_lazy('store:category_list')
     
-    def form_invalid(self, form):
-        pass
-    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Creación una Categoria'

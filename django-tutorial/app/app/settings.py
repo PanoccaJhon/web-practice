@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store',
     'general',
+    'login',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -104,6 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#About Login
+
+LOGIN_REDIRECT_URL = '/store/category/list/'
 
 
 # Internationalization

@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from general.views import IndexView
+from login.views import LoginFormView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view()),
-    path('store/', include('store.urls'))
+    path('store/', include('store.urls')),
+    path('user/login/', LoginFormView.as_view(), name = 'login')
 ]
