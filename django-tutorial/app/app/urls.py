@@ -20,7 +20,7 @@ from login.views import LoginFormView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view()),
+    path('', LoginFormView.as_view(), name = 'index'),
     path('store/', include('store.urls')),
-    path('user/login/', LoginFormView.as_view(), name = 'login')
+    path('user/', include('login.urls'))
 ]
