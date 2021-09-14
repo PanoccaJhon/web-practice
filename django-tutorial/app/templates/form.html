@@ -40,6 +40,10 @@
                 <button type="submit" class="btn btn-primary btn-flat">
                     <i class="fas fa-save"></i> Guardar registro
                 </button>
+
+                <a href="{% url 'store:category_list' %}" class="btn btn-danger btn-flat">
+                    <i class="fas fa-ban"></i> Cancelar
+                </a>
             </div>
         </div>
     </form>
@@ -54,25 +58,14 @@
             console.log(errors);
         {% endif %}
 
-        /**$('form').on('submit', function (e) {
+        $('form').on('submit', function (e) {
             e.preventDefault();
             var parameters = $(this).serializeArray();
-            $.ajax({
-                url: window.location.pathname,
-                type: 'POST',
-                data: parameters,
-                dataType: 'json'
-            }).done(function (data) {
-                console.log(data);
-                if (!data.hasOwnProperty('error')) {
-                    location.href = '{{ list_url }}';
-                    return false;
-                }
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                alert(textStatus + ': ' + errorThrown);
-            }).always(function (data) {
-
+            
+            submit_ajax(window.location.pathname,parameters,function(){
+                location.href = '{{ list_url }}'
             });
-        });**/
+        });
+
     </script>
 {% endblock %}
