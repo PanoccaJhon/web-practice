@@ -40,7 +40,7 @@ function submit_ajax(url,parameters, callback) {
                 text: 'No',
                 btnClass: 'btn-red',
                 action: function () {
-                    
+                    //Node for now
                 }
             }
         }
