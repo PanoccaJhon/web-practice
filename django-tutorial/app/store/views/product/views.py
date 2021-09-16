@@ -85,7 +85,7 @@ class ProductUpdateView(UpdateView):
         data = {}
         
         try:
-            action  =request.POST['action']
+            action = request.POST['action']
             if action == 'edit':
                 form = self.get_form()
                 data = form.save()
