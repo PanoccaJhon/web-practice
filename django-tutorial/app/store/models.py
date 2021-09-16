@@ -5,6 +5,8 @@ from django.forms import model_to_dict
 
 from store.choices import gender_choices
 
+#from django.conf.global_settings import MEDIA_URL, STATIC_URL
+
 
 class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name='Nombre', unique=True)
@@ -35,6 +37,11 @@ class Product(models.Model):
     def toJSON(self):
         item = model_to_dict(self)
         return item
+    
+    def get_image(self):
+        if self.image:
+            return '{}{}'.format('/media/', self.image)
+        return '{}{}'.format('/static/','img/default.png')
     
     class Meta:
         verbose_name = 'Producto'

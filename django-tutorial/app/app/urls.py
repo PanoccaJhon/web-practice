@@ -18,9 +18,14 @@ from django.urls import path, include
 from general.views import IndexView
 from login.views import LoginFormView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LoginFormView.as_view(), name = 'index'),
     path('store/', include('store.urls')),
     path('user/', include('login.urls'))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

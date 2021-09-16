@@ -17,7 +17,9 @@
             <td>{{ p.id }}</td>
             <td>{{ p.name }}</td>
             <td>{{ p.cate }}</td>
-            <td>{{ p.image }}</td>
+            <td>
+                <img src="{{ p.get_image }}" alt="esto es una imagen" width="50px">
+            </td>
             <td>{{ p.pvp }}</td>
             <td>
                 <a href="{% url 'store:product_update' p.id %}" class="btn btn-warning btn-sm">
